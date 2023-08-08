@@ -269,7 +269,7 @@ Now open the repository URL On GitHub.
 
 [![Pro Git Book](https://git-scm.com/images/progit2.png)](https://git-scm.com/book/)
 
-- Simple intro to Git cheerpick
+- Simple intro to Git cheerypick
 
 [![Git cherry pick tutorial. How to use git cherry-pick](https://img.youtube.com/vi/wIY824wWpu4/0.jpg)](https://youtu.be/wIY824wWpu4)
 
