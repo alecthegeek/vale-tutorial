@@ -48,7 +48,7 @@ In the following explanations we will talk about developers and that means **you
 
 About Alec
 
-[Alec](https://github.com/alecthegeek/) is an IT geek who currently works as a Developer Advocate at [PaperCut Software](https://www.papercut.com/) in [Melbourne](https://en.wikipedia.org/wiki/Melbourne), Australia. He's been using computers since the late '70s (an ICL 2904 mainframe) and he was a MS-DOS batch file (and later UNIX shell) wizard. More recently Alec has been learning PowerShell, he always has Windows Terminal open with both a PowerShell and WSL2 Bash prompt available. Recently he installed VS Code on his ARM64 Chrome OS tablet
+[Alec](https://github.com/alecthegeek/) is an IT geek who currently works as a Developer Advocate in [Melbourne](https://en.wikipedia.org/wiki/Melbourne), Australia. He's been using computers since the late '70s (an ICL 2904 mainframe) and he was a MS-DOS batch file (and later UNIX shell) wizard. More recently Alec has been learning PowerShell, he always has Windows Terminal open with both a PowerShell and WSL2 Bash prompt available. Recently he installed VS Code on his ARM64 Chrome OS tablet
 
 <!-- markdownlint-disable MD026 -->
 ## What are the problems VCS solves and how?
