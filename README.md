@@ -1,9 +1,20 @@
-# Using Git from Powershell
+# Larn how to add Vale to your technical writing project
 
-__NOTE__: This project was orginally hosted at https://github.com/PaperCutSoftware/git-from-powershell, but then I moved jobs
+__NOTE__: This example content is copied from https://github.com/alecthegee/git-from-powershell
 
-Example scripts to demonstrate how to use Git from the PowerShell prompt.
+These example `index.md` are provided to enable students to follow the tutorial session
 
-Note: Some examples assume a modern version of PowerShell Core.
+## Upgrade your Docs-As-Code Foo with the Vale Text Linter 
 
-More details on the linked web page -->
+Initially presented at [Everything Open](https://2025.everythingopen.au/)
+in Adelaide Jan 2025
+
+The content is provided in Markdown, restructuedText, and Asciidoc.
+Choose which format works for you.
+
+Download the example repo from https://github.com/alecthegeek/vale-tutorial.
+You can either clone the repo or download a zip file.
+
+
+
+
