@@ -11,11 +11,37 @@ weight = 10
 
 # Git from the PowerShell Prompt
 
+```mermaid
+---
+title: Example Git diagram
+---
+gitGraph
+   commit
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   checkout main
+   merge develop
+   commit
+   commit
+```
+
 These notes support a demonstration and talk that introduces PowerShell users to Git
 and version control concepts.
 An hour talk is not very long and these notes are brief, so links to more complete material are provided.
 
-Note: This content is written in British English
+Note: Australian English spelling is used throughout this content.
+
+This is an inline \(a^*=x-b^*\) equation.
+
+\[
+\begin{aligned}
+KL(\hat{y} || y) &= \sum_{c=1}^{M}\hat{y}_c \log{\frac{\hat{y}_c}{y_c}} \\
+JS(\hat{y} || y) &= \frac{1}{2}(KL(y||\frac{y+\hat{y}}{2}) + KL(\hat{y}||\frac{y+\hat{y}}{2}))
+\end{aligned}
+\]
 
 
 <div class="row">
