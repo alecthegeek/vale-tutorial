@@ -1,1 +1,5 @@
-!/.vscode/demo-snippets.code-snippets
+.vale.ini
+.styles/
+public/
+demo-magic.sh
+

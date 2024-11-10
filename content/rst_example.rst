@@ -1,7 +1,3 @@
-.. raw:: html
-
-   <!-- markdownlint-disable MD033 -->
-
 Git from the PowerShell Prompt
 ==============================
 
@@ -10,7 +6,7 @@ users to Git and version control concepts. An hour talk is not very long
 and these notes are brief, so links to more complete material are
 provided.
 
-Note: This content is written in British English
+Note: This content is written in Australian English
 
 .. raw:: html
 

@@ -1,3 +1,12 @@
++++
+date = 2024-02-02T04:14:54-08:00
+draft = false
+title = 'Markdown Example'
+weight = 10
+[params]
+  author = 'Alec Clews'
++++
+
 <!-- markdownlint-disable MD033 -->
 
 # Git from the PowerShell Prompt

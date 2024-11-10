@@ -7,6 +7,12 @@ provided.
 
 Note: This content is written in British English
 
+[cols="a,a", frame=none, grid=none]
+|===
+| image::https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png[]
+| image::bar.png[]
+|===
+
 === Introduction
 
 https://www.youtube.com/watch?v=L2Qe-5MjTX8[image:https://img.youtube.com/vi/L2Qe-5MjTX8/0.jpg[Talk
