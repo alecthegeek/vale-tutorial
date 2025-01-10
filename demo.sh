@@ -2,7 +2,7 @@
 
 # Setup
 
-export CONTENT_BASE=./example-content
+export CONTENT_BASE=./content
 export CONFIG_BASE=./example-vale-config-files
 
 shopt -s expand_aliases
@@ -22,11 +22,15 @@ if [ ! -f demo-magic.sh ] ; then
   curl https://raw.githubusercontent.com/paxtonhare/demo-magic/master/demo-magic.sh -o demo-magic.sh
 fi
 
-rm -r .styles/ .vale.ini 
+rm -r .styles/ .vale.ini
+
+git submodule deinit --force $CONTENT_BASE
+
+git submodule add git@github.com:alecthegeek/vale-tutorial.wiki.git $CONTENT_BASE
 
 source ./demo-magic.sh
 
-clear
+read x
 
 pe "xdg-open https://vale.sh/"
 
@@ -34,24 +38,24 @@ pe "tree $CONTENT_BASE $CONFIG_BASE"
 
 # Start Simple
 
-pe "cat $CONTENT_BASE/simple00.md"
+pe "cat $CONTENT_BASE/Home.md"
 wezterm imgcat repo-qr.png --width 40 --height 40
 
 pe "cat $CONFIG_BASE/example0.ini"
 
 pe "xdg-open 'https://vale.sh/docs/styles#vale'"
 
-pe "vale --config $CONFIG_BASE/example0.ini $CONTENT_BASE/simple00.md"
-pe "VALE_CONFIG_PATH=$CONFIG_BASE/example0.ini vale $CONTENT_BASE/simple00.md"
+pe "vale --config $CONFIG_BASE/example0.ini $CONTENT_BASE/Home.md"
+pe "VALE_CONFIG_PATH=$CONFIG_BASE/example0.ini vale $CONTENT_BASE/Home.md"
 
 pe "cp $CONFIG_BASE/example0.ini .vale.ini"
-pe "vale --no-wrap $CONTENT_BASE/simple00.md"
+pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
 pe "vale ls-config"
 
-pe "vale ls-metrics $CONTENT_BASE/simple00.md"
-pe "vale ls-metrics $CONTENT_BASE/simple00.md | jq .words"
-pe "wc -w $CONTENT_BASE/simple00.md"
+pe "vale ls-metrics $CONTENT_BASE/Home.md"
+pe "vale ls-metrics $CONTENT_BASE/Home.md | jq .words"
+pe "wc -w $CONTENT_BASE/Home.md"
 
 pe "cp $CONFIG_BASE/example1.ini .vale.ini"
 
@@ -69,14 +73,14 @@ pe "tree .styles"
 
 pe "cat .styles/Google/OxfordComma.yml"
 
-pe "vale --no-wrap $CONTENT_BASE/simple00.md"
+pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
 echo >> .vale.ini
 echo "Google.OxfordComma = error" >> .vale.ini
 
 pe "cat .vale.ini"
 
-pe "vale --no-wrap $CONTENT_BASE/simple00.md"
+pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
 
 cp $CONFIG_BASE/example1.ini .vale.ini
@@ -85,7 +89,7 @@ echo "Google.OxfordComma = NO" >> .vale.ini
 
 pe "cat .vale.ini"
 
-pe "vale --no-wrap $CONTENT_BASE/simple00.md"
+pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
 cp $CONFIG_BASE/example1.ini .vale.ini
 echo >> .vale.ini
@@ -93,7 +97,7 @@ echo "Google.OxfordComma = suggestion" >> .vale.ini
 
 pe "cat .vale.ini"
 
-pe "vale --no-wrap $CONTENT_BASE/simple00.md"
+pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
 # Change alert level
 
@@ -103,7 +107,7 @@ pe "cat .vale.ini"
 
 pe "vale sync"
 
-pe "vale --no-wrap $CONTENT_BASE/simple00.md"
+pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
 # Add project Vocab
 
@@ -115,7 +119,7 @@ pe "mkdir -p .styles/config/vocabularies/ProjectVocab/"
 
 echo "echo 'repos?' >> .styles/config/vocabularies/ProjectVocab/accept.txt"
 
-pe "vale --no-wrap $CONTENT_BASE/simple00.md"
+pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
 # Create our own spelling rules for AU English
 
@@ -139,5 +143,5 @@ pe "cp $CONFIG_BASE/example4.ini .vale.ini"
 
 pe "cat .vale.ini"
 
-pe "vale --no-wrap $CONTENT_BASE/simple.md"
+pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
