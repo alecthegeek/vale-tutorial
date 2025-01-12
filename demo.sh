@@ -2,7 +2,7 @@
 
 # Setup
 
-export CONTENT_BASE=./content
+export CONTENT_BASE=./wiki
 export CONFIG_BASE=./example-vale-config-files
 
 shopt -s expand_aliases
@@ -24,22 +24,23 @@ fi
 
 rm -r .styles/ .vale.ini
 
-git submodule deinit --force $CONTENT_BASE
-
-git submodule add git@github.com:alecthegeek/vale-tutorial.wiki.git $CONTENT_BASE
-
 source ./demo-magic.sh
+clear
 
-read x
+echo Are we set for success?
+echo
+
+pe "vale --version"
 
 pe "xdg-open https://vale.sh/"
+
+wezterm imgcat wiki-qr.png --width 40 --height 40
 
 pe "tree $CONTENT_BASE $CONFIG_BASE"
 
 # Start Simple
 
 pe "cat $CONTENT_BASE/Home.md"
-wezterm imgcat repo-qr.png --width 40 --height 40
 
 pe "cat $CONFIG_BASE/example0.ini"
 
@@ -50,6 +51,8 @@ pe "VALE_CONFIG_PATH=$CONFIG_BASE/example0.ini vale $CONTENT_BASE/Home.md"
 
 pe "cp $CONFIG_BASE/example0.ini .vale.ini"
 pe "vale --no-wrap $CONTENT_BASE/Home.md"
+echo Much more useful, lint a whole directory tree
+pe "vale --no-wrap $CONTENT_BASE"
 
 pe "vale ls-config"
 
@@ -63,7 +66,7 @@ pe "cat .vale.ini"
 
 pe "xdg-open 'https://github.com/errata-ai/packages?tab=readme-ov-file#available-styles'"
 
-pe "mkdir -p .styles/"
+# pe "mkdir -p .styles/"
 
 pe "tree .styles"
 
@@ -107,6 +110,8 @@ pe "cat .vale.ini"
 
 pe "vale sync"
 
+pe "ls .styles"
+
 pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
 # Add project Vocab
@@ -117,7 +122,7 @@ pe "cat .vale.ini"
 
 pe "mkdir -p .styles/config/vocabularies/ProjectVocab/"
 
-echo "echo 'repos?' >> .styles/config/vocabularies/ProjectVocab/accept.txt"
+pe "echo 'repos?' >> .styles/config/vocabularies/ProjectVocab/accept.txt"
 
 pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
@@ -125,6 +130,8 @@ pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
 pe "curl --output '.styles/config/dictionaries/en_AU.#1' --create-dirs \
   'https://raw.githubusercontent.com/LibreOffice/dictionaries/master/en/en_AU.{dic,aff}'"
+
+pe "tree .styles/config/dictionaries
 
 pe "mkdir .styles/ProjectStyle"
 
