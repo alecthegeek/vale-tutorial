@@ -34,7 +34,8 @@ pe "vale --version"
 
 pe "xdg-open https://vale.sh/"
 
-wezterm imgcat wiki-qr.png --width 40 --height 40
+wezterm imgcat repo-qr.png --width 40 --height 40
+echo https://github.com/alecthegeek/vale-tutorial
 
 pe "tree $CONTENT_BASE $CONFIG_BASE"
 
@@ -151,4 +152,49 @@ pe "cp $CONFIG_BASE/example4.ini .vale.ini"
 pe "cat .vale.ini"
 
 pe "vale --no-wrap $CONTENT_BASE/Home.md"
+
+echo Fine Grained Spell Checking
+
+# Examine rules 
+#
+
+pe "curl --output '.styles/config/dictionaries/en_US.#1' --create-dirs \
+  'https://raw.githubusercontent.com/LibreOffice/dictionaries/master/en/en_US.{dic,aff}'"
+
+
+cat > .styles/ProjectStyle/Spelling_US.yml <<EOF
+extends: spelling
+level: error
+message: "'%s' is not US English"
+dicpath: .styles/config/dictionaries
+dictionaries:
+  - en_US
+EOF
+
+cat .styles/ProjectStyle/Spelling_US.yml 
+vi
+pe "cp $CONFIG_BASE/example5.ini .vale.ini"
+
+pe "vale --ext=.md Flavour Flavor"
+
+cat <<EOF > /tmp/sampleUSspelling.md
+
+<!--
+ProjectStyle.Spelling_AU = NO
+ProjectStyle.Spelling_US = YES
+-->
+
+* Facebook Privacy Center:  https://www.facebook.com/privacy/center/
+
+<!--
+ProjectStyle.Spelling_AU = YES
+ProjectStyle.Spelling_US = NO
+-->
+
+
+EOF
+
+pe "cat  /tmp/sampleUSspelling.md"
+
+
 
