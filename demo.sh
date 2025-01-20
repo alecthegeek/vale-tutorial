@@ -220,15 +220,15 @@ cat <<EOF > /tmp/sampleUSspelling.md
 * Facebook Privacy Center:  https://www.facebook.com/privacy/center/
 
 <!--
-ProjectStyle.Spelling_AU = NO
-ProjectStyle.Spelling_US = YES
+vale ProjectStyle.Spelling_AU = NO
+vale ProjectStyle.Spelling_US = YES
 -->
 
 * Facebook Privacy Center:  https://www.facebook.com/privacy/center/
 
 <!--
-ProjectStyle.Spelling_AU = YES
-ProjectStyle.Spelling_US = NO
+vale ProjectStyle.Spelling_AU = YES
+vale ProjectStyle.Spelling_US = NO
 -->
 
 EOF
