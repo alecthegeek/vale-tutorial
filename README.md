@@ -2,6 +2,14 @@
 
 These example files are provided to enable students to follow the tutorial session
 
+## Feedback Please
+
+If you attended this workshop (or just used the materials)
+please help me with feedback
+[here](https://forms.gle/U1FEUR4UC8jAWEyz5).
+
+All responses are anonymous.
+
 ## Upgrade your Docs-As-Code Foo with the Vale Text Linter 
 
 Initially presented at [Everything Open](https://2025.everythingopen.au/)

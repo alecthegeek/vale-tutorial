@@ -32,8 +32,11 @@ rm -r .styles/ .vale.ini
 
 source ./demo-magic.sh
 clear
-p "Let's lern about Vale"
-echo "Are we set for success?"
+p "Let's learn about Vale"
+
+wezterm imgcat AcknowledgementOfCountry.png --width 80 --height 80
+
+p "Are we set for success?"
 
 pe "vale --version"
 
@@ -80,7 +83,7 @@ pe "cat .vale.ini"
 
 pe "xdg-open 'https://github.com/errata-ai/packages?tab=readme-ov-file#available-styles'"
 
-pe "ls .style"
+pe "ls .styles"
 
 pe "vale sync"
 
@@ -142,9 +145,10 @@ pe "ls .styles"
 
 pe "vale --no-wrap $CONTENT_BASE/Home.md"
 
+
 p "Add project Vocab"
 
-# pe "cp $CONFIG_BASE/example3.ini .vale.ini"
+pe "cp $CONFIG_BASE/example3.ini .vale.ini"
 
 pe "cat .vale.ini"
 
@@ -182,7 +186,7 @@ EOF
 
 cat .styles/ProjectStyle/Spelling_AU.yml 
 
-# pe "cp $CONFIG_BASE/example4.ini .vale.ini"
+pe "cp $CONFIG_BASE/example4.ini .vale.ini"
 
 pe "cat .vale.ini"
 
@@ -213,6 +217,8 @@ pe "vale --ext=.md 'Flavour Flavor'"
 
 cat <<EOF > /tmp/sampleUSspelling.md
 
+* Facebook Privacy Center:  https://www.facebook.com/privacy/center/
+
 <!--
 ProjectStyle.Spelling_AU = NO
 ProjectStyle.Spelling_US = YES
@@ -225,19 +231,19 @@ ProjectStyle.Spelling_AU = YES
 ProjectStyle.Spelling_US = NO
 -->
 
-
 EOF
 
-pe "cat /tmp/sampleUSspelling.md | vale -ext=.md
+pe "cat /tmp/sampleUSspelling.md"
+
+pe "cat /tmp/sampleUSspelling.md | vale --ext=.md"
 
 p "Let\'s do something fancy"
 
-p "Make Vale check a fenced code block, (```mermaid ... ```)"
+p 'Make Vale check a fenced code block, (```mermaid ... ```)'
 
 p "cat wiki/02-First-Steps.md"
 
-p "gsed -ne '/```mermaid/,/```/{/```mermaid/!{/```/!p}}'  wiki/02-First-Steps.md"
+p "gsed -ne \'mermaid/,/```/{/```mermaid/!{/```/!p}}\'  wiki/02-First-Steps.md"
 
-p "gsed -ne '/```mermaid/,/```/{/```mermaid/!{/```/!p}}'  wiki/02-First-Steps.md | vale -ext=.md"
-
+p "gsed -ne \'/```mermaid/,/```/{/```mermaid/!{/```/!p}}\'  wiki/02-First-Steps.md | vale -ext=.md"
 
